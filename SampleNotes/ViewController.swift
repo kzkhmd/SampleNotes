@@ -41,8 +41,6 @@ class ViewController: UIViewController, UITextViewDelegate {
         
         TextList[row] = TextView.text
         
-        print(TextList)
-        
         defaults.set(TextList, forKey: "NoteList")
     }
     

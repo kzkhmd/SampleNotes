@@ -11,8 +11,9 @@ import UIKit
 class NotesListTableViewController: UITableViewController {
     
     let defaults = UserDefaults.standard
+    
     var NoteList:[(title:String, text:String)] = []
-
+    var TextList:[String] = []
     
     @IBAction func addNewNote(_ sender: UIBarButtonItem) {
         var NoteData:(title:String, text:String)
@@ -28,6 +29,10 @@ class NotesListTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.tableView.rowHeight = 50
+        
+        for NoteData in NoteList {
+            TextList.append(NoteData.text)
+        }
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -61,15 +66,18 @@ class NotesListTableViewController: UITableViewController {
     
 
     // MARK: - Table view data source
-
+    
+    // セクション数を返す
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
+    // セクションごとの行数を返す
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return NoteList.count
     }
 
+    // 各行に表示するセルを返す
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let NoteData = NoteList[(indexPath as NSIndexPath).row]
@@ -78,7 +86,23 @@ class NotesListTableViewController: UITableViewController {
 
         return cell
     }
-
+    
+    // セルをスワイプしたときの処理
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            NoteList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            var NoteText:[String] = []
+            
+            for NoteData in NoteList {
+                NoteText.append(NoteData.text)
+            }
+            
+            defaults.set(NoteText, forKey: "NoteList")
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
