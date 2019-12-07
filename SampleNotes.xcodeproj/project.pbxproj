@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4018E1C239A27C200F5D88B /* NoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4018E1B239A27C200F5D88B /* NoteData.swift */; };
 		D4061812232D1E2D00731AB0 /* NotesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4061811232D1E2D00731AB0 /* NotesListTableViewController.swift */; };
 		D47CAB88232CE48A007D9161 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47CAB87232CE48A007D9161 /* AppDelegate.swift */; };
 		D47CAB8A232CE48A007D9161 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47CAB89232CE48A007D9161 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D4018E1B239A27C200F5D88B /* NoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteData.swift; sourceTree = "<group>"; };
 		D4061811232D1E2D00731AB0 /* NotesListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListTableViewController.swift; sourceTree = "<group>"; };
 		D47CAB84232CE48A007D9161 /* SampleNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D47CAB87232CE48A007D9161 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				D47CAB8E232CE48B007D9161 /* Assets.xcassets */,
 				D47CAB90232CE48B007D9161 /* LaunchScreen.storyboard */,
 				D47CAB93232CE48B007D9161 /* Info.plist */,
+				D4018E1B239A27C200F5D88B /* NoteData.swift */,
 			);
 			path = SampleNotes;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D47CAB8A232CE48A007D9161 /* ViewController.swift in Sources */,
+				D4018E1C239A27C200F5D88B /* NoteData.swift in Sources */,
 				D4061812232D1E2D00731AB0 /* NotesListTableViewController.swift in Sources */,
 				D47CAB88232CE48A007D9161 /* AppDelegate.swift in Sources */,
 			);
