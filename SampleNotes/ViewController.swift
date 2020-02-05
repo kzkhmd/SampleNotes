@@ -47,7 +47,5 @@ class ViewController: UIViewController, UITextViewDelegate {
     @objc func endEditing() {
         self.view.endEditing(true)
     }
-
-
 }
 
